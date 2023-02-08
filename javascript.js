@@ -2,13 +2,13 @@
 function getComputerChoice(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    Math.floor(Math.random() * (max - min + 1) + min);
+    let num = Math.floor(Math.random() * (max - min + 1) + min);
 // 2. Write an if statement that combines with the function to then select either 'rock', 'paper', or 'scissors'
-    if (Math.floor(Math.random() * (max - min + 1) + min) == 1) {
+    if (num == 1) {
         return 'rock';
-    } else if (Math.floor(Math.random() * (max - min + 1) + min) == 2) {
+    } else if (num == 2) {
         return 'paper';
-    } else (Math.floor(Math.random() * (max - min + 1) + min) == 3) 
+    } else (num == 3) 
         return 'scissors';
 }
 console.log( getComputerChoice(1, 3) );
