@@ -3,7 +3,7 @@ function getComputerChoice(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     Math.floor(Math.random() * (max - min + 1) + min);
-// 2. Write a function that takes that number and returns either 'rock', 'paper', or 'scissors'
+// 2. Write an if statement that combines with the function to then select either 'rock', 'paper', or 'scissors'
     if (Math.floor(Math.random() * (max - min + 1) + min) == 1) {
         return 'rock';
     } else if (Math.floor(Math.random() * (max - min + 1) + min) == 2) {
