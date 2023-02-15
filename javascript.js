@@ -3,34 +3,54 @@ function getComputerChoice(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     const num = Math.floor(Math.random() * (max - min + 1) + min);
-// 2. Write an if statement that combines with the function to then select either 'rock', 'paper', or 'scissors'
-    if (num == 1) {
-        return 'rock';
-    } else if (num == 2) {
-        return 'paper';
-    } else (num == 3)
-        return 'scissors';
+
+    if (num === 1) {
+      return 'rock';
+    } else if (num === 2) {
+      return 'paper';
+    } else if (num === 3) {
+      return 'scissors';
+    }
+  }
+  
+
+function getPlayerSelection() {
+
+    let selection = '';
+    while (selection !== 'rock' && selection !== 'paper' && selection !== 'scissors') {
+        selection = prompt('rock, paper, or scissors?');
+        selection = selection.toLowerCase();
+    }
+
+        return selection;
+
 }
-console.log(getComputerChoice(1,3));
 
 // 3. Write function that plays one round of rock paper scissors
 function playRound(playerSelection, computerSelection) {
+    
+    playerSelection = playerSelection.toLowerCase();
+    console.log('playerSelection:', playerSelection);
+    console.log('computerSelection:', computerSelection);
   
         if (playerSelection === computerSelection) {
-            return ('You foos tied');
+            return 'You tied';
         } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            return ('You won boiiii!!!!');
+            return 'You won';
         } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-            return ('You won boiiii!!!!');
+            return 'You won';
         } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            return ('You won boiiii!!!!');
+            return 'You won';
         } else {
-            return ('The computer wins, sadly :(');
+            return 'The computer wins, sadly';
         }
-
 }
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice(1, 3);
-console.log(playRound(playerSelection, computerSelection));
-//console.log(playRound());
+const playerSelection = getPlayerSelection();
+const computerSelection = getComputerChoice(1,3);
+const result = playRound(playerSelection, computerSelection);
+console.log('result:', result);
+
+//const computerSelection = getComputerChoice(1, 3);
+//console.log(playRound(playerSelection, computerSelection))
+
 // 4. Make sure the function for one round of the game picks a winner that also describes what beats what (ex: paper beats rock) This also should be case insensitive for Rock RoCK and so on work.
